@@ -30,10 +30,10 @@ public class JsonManager
     }
     public T LoadData<T>(string fileName, JsonType jsonType = JsonType.LitJson)where T : new()
     {
-        string path = Application.persistentDataPath + "/" + fileName + ".json";
+        string path =Application.streamingAssetsPath + "/" + fileName + ".json"; 
         
         if (!File.Exists(path))
-            path = Application.streamingAssetsPath + "/" + fileName + ".json";
+            path = Application.persistentDataPath + "/" + fileName + ".json";
         if (!File.Exists(path))
             return new T();
 
